@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './assets/styles.css'
 import './assets/response.css'
 
+import { DATA_SHOES } from './mock'
+
+
 export default function App() {
+  const [dataShoes] = useState(DATA_SHOES)
+  const [itemShoes, setItemShoes] = useState(dataShoes[0])
+  console.log("itemShoes:", itemShoes);
+  console.log("data Shoes:", DATA_SHOES);
+  const onSelectedShoes = (items) => {
+    setItemShoes(items)
+  }
+
+
   return (
     <section id="header">
       <div className="header__left">
@@ -14,7 +26,7 @@ export default function App() {
       <div className="header__right">
         <img className="image_banner" src="./images/nike2.png" alt="/" />
       </div>
-      <img className="shoes__panner" src="./images/shoes.png" alt="/" />
+      <img className="shoes__panner" src={itemShoes.picture_shoes} alt="/" />
       <div className="contact__shoes">
         <div>
           <img className="icon_Shoes animation_1 active" src="./images/icon_shoes.png" alt="/" />
@@ -23,10 +35,14 @@ export default function App() {
           <img className="icon_Shoes animation_4" src="./images/icon_shoes.png" alt="/" />
         </div>
         <div className="color_Shoes">
-          <div className="color color_gray" />
-          <div className="color _orange" />
-          <div className="color _perple" />
-          <div className="color _red" />
+          {
+            dataShoes && dataShoes.map((item, index) => {
+              return (
+                <div key={index} onClick={() => { onSelectedShoes(item) }} className="color" style={{ backgroundColor: `${item.color}` }}>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </section>
