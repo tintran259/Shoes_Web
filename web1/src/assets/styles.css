@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+#header {
+  width: 100%;
+  height: 650px;
+  background-color: #f5f6fa;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.header__left {
+  width: 70%;
+  height: 100%;
+  background-color: #d1d8e0;
+  /* background-color: #dd6614; */
+
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+}
+.header__right {
+  width: 30%;
+  height: 100%;
+}
+.image_banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+.title_header {
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-left: 60px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  animation-duration: 2s;
+  animation-name: moveTitle;
+}
+.slogan_header {
+  display: inline-block;
+  width: 170px;
+
+  background-color: #0d0b14;
+  color: #fff;
+
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-weight: 600;
+
+  padding: 10px;
+  margin-left: 80px;
+}
+
+.logo_Nike {
+  width: 40px;
+  height: 30px;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+.shoes__panner {
+  cursor: pointer;
+
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation-name: rotateShoes;
+  animation-duration: 2s;
+}
+
+.contact__shoes {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  display: flex;
+  flex-direction: row;
+}
+.color_Shoes {
+  width: 20px;
+  height: 100%;
+  margin-left: 20px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #2d2d2d;
+}
+.color {
+  width: 100%;
+  height: 25%;
+}
+.color_gray {
+  background: #bbbdbc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+._orange {
+  background-color: #dd6614;
+}
+.icon_Shoes {
+  width: 40px;
+  height: 40px;
+
+  display: block;
+
+  border-radius: 100%;
+  border: 0.3px solid #a4b0be;
+
+  padding: 5px;
+  margin-bottom: 20px;
+
+  background-color: #000;
+
+  transition: all ease 1;
+}
+
+.active {
+  width: 40px;
+  height: 40px;
+
+  display: block;
+
+  border-radius: 100%;
+  border: 0.3px solid #a4b0be;
+
+  padding: 5px;
+  margin-bottom: 10px;
+
+  background-color: #fff;
+}
+.animation_1 {
+  animation-name: moveView;
+  animation-duration: 1s;
+}
+.animation_2 {
+  animation-name: moveView;
+  animation-duration: 1.4s;
+}
+.animation_3 {
+  animation-name: moveView;
+  animation-duration: 1.8s;
+}
+.animation_4 {
+  animation-name: moveView;
+  animation-duration: 2.2s;
+}
+
+@keyframes moveTitle {
+  0% {
+    position: relative;
+    left: -100px;
+  }
+  100% {
+    position: relative;
+    left: 0px;
+  }
+}
+
+@keyframes rotateShoes {
+  0% {
+    position: absolute;
+    top: 14.2%;
+    left: 23.25%;
+    transform: scale(0);
+  }
+  50% {
+    position: absolute;
+    top: 14.2%;
+    left: 23.25%;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes moveView {
+  0% {
+    position: relative;
+    left: -100px;
+  }
+  100% {
+    position: relative;
+    left: 0;
+  }
+}
